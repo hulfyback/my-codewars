@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SqInRect {
-  private static List<Integer> listSquares = new ArrayList<>();
 
   public static List<Integer> sqInRect(int lng, int wdth) {
     if (lng == wdth) {
       return null;
     }
+    List<Integer> listSquares = new ArrayList<>();
     int tempGreaterSide;
     int tempDiff = Math.abs(lng - wdth);
     int tempSmallerSide = Math.min(lng, wdth);
