@@ -5,16 +5,14 @@ import java.util.List;
 
 public class SqInRect {
   private static List<Integer> listSquares = new ArrayList<>();
-  private static int tempGreaterSide;
-  private static int tempSmallerSide;
-  private static int tempDiff;
 
   public static List<Integer> sqInRect(int lng, int wdth) {
     if (lng == wdth) {
       return null;
     }
-    tempGreaterSide = tempSmallerSide = Math.min(lng, wdth);
-    tempDiff = Math.abs(lng - wdth);
+    int tempGreaterSide = Math.min(lng, wdth);
+    int tempSmallerSide = Math.min(lng, wdth);
+    int tempDiff = Math.abs(lng - wdth);
     listSquares.add(tempGreaterSide);
 
     while (tempDiff != tempSmallerSide) {
