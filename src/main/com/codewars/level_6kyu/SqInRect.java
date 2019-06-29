@@ -10,16 +10,16 @@ public class SqInRect {
     if (lng == wdth) {
       return null;
     }
-    int tempGreaterSide = Math.min(lng, wdth);
-    int tempSmallerSide = Math.min(lng, wdth);
+    int tempGreaterSide;
     int tempDiff = Math.abs(lng - wdth);
-    listSquares.add(tempGreaterSide);
+    int tempSmallerSide = Math.min(lng, wdth);
+    listSquares.add(Math.min(lng, wdth));
 
     while (tempDiff != tempSmallerSide) {
-      tempSmallerSide = tempDiff;
+      tempGreaterSide = Math.max(tempSmallerSide, tempDiff);
+      tempSmallerSide = Math.min(tempSmallerSide, tempDiff);
       tempDiff = tempGreaterSide - tempSmallerSide;
-      tempGreaterSide = tempSmallerSide;
-      listSquares.add(tempGreaterSide);
+      listSquares.add(tempSmallerSide);
     }
     listSquares.add(tempDiff);
     return listSquares;
