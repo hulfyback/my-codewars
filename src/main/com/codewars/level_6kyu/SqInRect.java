@@ -13,7 +13,7 @@ public class SqInRect {
     if (lng == wdth) {
       return null;
     }
-    tempGreaterSide = Math.min(lng, wdth);
+    tempGreaterSide = tempSmallerSide = Math.min(lng, wdth);
     tempDiff = Math.abs(lng - wdth);
     listSquares.add(tempGreaterSide);
 
@@ -23,6 +23,7 @@ public class SqInRect {
       tempGreaterSide = tempSmallerSide;
       listSquares.add(tempGreaterSide);
     }
+    listSquares.add(tempDiff);
     return listSquares;
   }
 }
